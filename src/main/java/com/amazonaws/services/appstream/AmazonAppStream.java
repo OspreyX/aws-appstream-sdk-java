@@ -18,7 +18,6 @@ package com.amazonaws.services.appstream;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.Signer;
 import com.amazonaws.hal.HalService;
 
 import java.util.Map;
@@ -31,6 +30,8 @@ public class AmazonAppStream {
     //-------------------------------------------------------------
 
     private static final String DEFAULT_ENDPOINT = "appstream.us-east-1.amazonaws.com";
+    private static final String SERVICE_NAME = "appstream";
+    private static final String REGION_ID = "us-east-1";
 
 
     //-------------------------------------------------------------
@@ -50,7 +51,8 @@ public class AmazonAppStream {
 
 
     public AmazonAppStream(String endpoint) {
-        this.appStreamService = new HalService<>(endpoint == null ? DEFAULT_ENDPOINT : endpoint, AppStream.class);
+        this.appStreamService = new HalService<>(endpoint == null ? DEFAULT_ENDPOINT : endpoint,
+                                                 SERVICE_NAME, REGION_ID, AppStream.class);
     }
 
 
@@ -67,13 +69,6 @@ public class AmazonAppStream {
 
     public AmazonAppStream with(AWSCredentialsProvider awsCredentialsProvider) {
         appStreamService.with(awsCredentialsProvider);
-
-        return this;
-    }
-
-
-    public AmazonAppStream with(Signer signer) {
-        appStreamService.with(signer);
 
         return this;
     }

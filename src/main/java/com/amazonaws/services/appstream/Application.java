@@ -18,6 +18,7 @@ package com.amazonaws.services.appstream;
 
 import com.amazonaws.hal.Link;
 import com.amazonaws.hal.ResourceInfo;
+import com.amazonaws.hal.UriVariable;
 import com.amazonaws.http.HttpMethodName;
 
 import java.util.Date;
@@ -51,7 +52,7 @@ public interface Application extends ResourceInfo {
     Sessions getSessions();
 
     @Link(relation = "session:by-id")
-    Session getSessionById(String sessionId);
+    Session getSessionById(@UriVariable(name = "session-id") String sessionId);
 
     @Link(relation = "session:entitle", method = HttpMethodName.POST)
     Session entitleSession(EntitleSessionInput entitleSessionInput);

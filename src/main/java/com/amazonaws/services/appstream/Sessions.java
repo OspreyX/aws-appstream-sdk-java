@@ -18,6 +18,7 @@ package com.amazonaws.services.appstream;
 
 import com.amazonaws.hal.Link;
 import com.amazonaws.hal.ResourceInfo;
+import com.amazonaws.hal.UriVariable;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public interface Sessions extends ResourceInfo {
     //-------------------------------------------------------------
 
     @Link(relation = "session:by-id")
-    Session getById(String sessionId);
+    Session getById(@UriVariable(name = "session-id") String sessionId);
 
     @Link(relation = "item")
     List<Session> getItems();

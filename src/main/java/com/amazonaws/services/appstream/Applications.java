@@ -18,6 +18,7 @@ package com.amazonaws.services.appstream;
 
 import com.amazonaws.hal.Link;
 import com.amazonaws.hal.ResourceInfo;
+import com.amazonaws.hal.UriVariable;
 import com.amazonaws.http.HttpMethodName;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public interface Applications extends ResourceInfo {
     //-------------------------------------------------------------
 
     @Link(relation = "application:by-id")
-    Application getById(String applicationId);
+    Application getById(@UriVariable(name = "application-id") String applicationId);
 
     @Link(relation = "application:create", method = HttpMethodName.POST)
     Application create(CreateApplicationInput createApplicationInput);
