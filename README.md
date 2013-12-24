@@ -1,7 +1,7 @@
-AppStream SDK for Java
-======================
+Amazon AppStream SDK for Java
+=============================
 
-The **AppStream SDK for Java** enables Java developers to easily work with [Amazon AppStream][appstream]. You can get started in minutes using *Maven*, or download the source from here and build it locally.
+The **Amazon AppStream SDK for Java** enables Java developers to easily work with [Amazon AppStream][appstream]. You can get started in minutes using *Maven*, or download the source from here and build it locally.
 
 To start using the SDK in your code using Maven, please insert the following dependency into your pom.xml:
 
