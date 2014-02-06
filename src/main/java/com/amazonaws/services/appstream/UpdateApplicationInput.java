@@ -24,7 +24,8 @@ public class UpdateApplicationInput {
 
     private String name;
     private String description;
-    private String launchCommand;
+    private String launchPath;
+    private String launchParameters;
 
 
     //-------------------------------------------------------------
@@ -35,10 +36,11 @@ public class UpdateApplicationInput {
     }
 
 
-    public UpdateApplicationInput(String name, String description, String launchCommand) {
+    public UpdateApplicationInput(String name, String description, String launchPath, String launchParameters) {
         this.name = name;
         this.description = description;
-        this.launchCommand = launchCommand;
+        this.launchPath = launchPath;
+        this.launchParameters = launchParameters;
     }
 
 
@@ -66,12 +68,22 @@ public class UpdateApplicationInput {
     }
 
 
-    public String getLaunchCommand() {
-        return launchCommand;
+    public String getLaunchPath() {
+        return launchPath;
     }
 
 
-    public void setLaunchCommand(String launchCommand) {
-        this.launchCommand = launchCommand;
+    public void setLaunchPath(String launchPath) {
+        this.launchPath = launchPath;
+    }
+
+
+    public String getLaunchParameters() {
+        return launchParameters;
+    }
+
+
+    public void setLaunchParameters(String launchParameters) {
+        this.launchParameters = launchParameters;
     }
 }

@@ -26,7 +26,8 @@ public class CreateApplicationInput {
     private String description;
     private String installerUrl;
     private String installerParameters;
-    private String launchCommand;
+    private String launchPath;
+    private String launchParameters;
 
 
     //-------------------------------------------------------------
@@ -38,12 +39,13 @@ public class CreateApplicationInput {
 
 
     public CreateApplicationInput(String name, String description, String installerUrl,
-                                  String installerParameters, String launchCommand) {
+                                  String installerParameters, String launchPath, String launchParameters) {
         this.name = name;
         this.description = description;
         this.installerUrl = installerUrl;
         this.installerParameters = installerParameters;
-        this.launchCommand = launchCommand;
+        this.launchPath = launchPath;
+        this.launchParameters = launchParameters;
     }
 
 
@@ -91,12 +93,22 @@ public class CreateApplicationInput {
     }
 
 
-    public String getLaunchCommand() {
-        return launchCommand;
+    public String getLaunchPath() {
+        return launchPath;
     }
 
 
-    public void setLaunchCommand(String launchCommand) {
-        this.launchCommand = launchCommand;
+    public void setLaunchPath(String launchPath) {
+        this.launchPath = launchPath;
+    }
+
+
+    public String getLaunchParameters() {
+        return launchParameters;
+    }
+
+
+    public void setLaunchParameters(String launchParameters) {
+        this.launchParameters = launchParameters;
     }
 }

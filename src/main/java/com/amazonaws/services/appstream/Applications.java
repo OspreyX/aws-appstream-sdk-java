@@ -31,7 +31,7 @@ public interface Applications extends ResourceInfo {
     //-------------------------------------------------------------
 
     @Link(relation = "application:by-id")
-    Application getById(@UriVariable(name = "application-id") String applicationId);
+    Application getById(@UriVariable(name = "application_id") String applicationId);
 
     @Link(relation = "application:create", method = HttpMethodName.POST)
     Application create(CreateApplicationInput createApplicationInput);
