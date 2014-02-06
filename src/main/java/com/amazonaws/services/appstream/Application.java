@@ -40,7 +40,7 @@ public interface Application extends ResourceInfo {
     ApplicationStatus reactivate(ReactivateApplicationInput reactivateApplicationInput);
 
     @Link(relation = "application:delete", method = HttpMethodName.DELETE)
-    Applications delete();
+    ApplicationStatus delete();
 
     @Link(relation = "application:status")
     ApplicationStatus getStatus();
@@ -52,7 +52,7 @@ public interface Application extends ResourceInfo {
     Sessions getSessions();
 
     @Link(relation = "session:by-id")
-    Session getSessionById(@UriVariable(name = "session-id") String sessionId);
+    Session getSessionById(@UriVariable(name = "session_id") String sessionId);
 
     @Link(relation = "session:entitle", method = HttpMethodName.POST)
     Session entitleSession(EntitleSessionInput entitleSessionInput);
@@ -70,7 +70,9 @@ public interface Application extends ResourceInfo {
     String getDescription();
     String getInstallerUrl();
     String getInstallerParameters();
-    String getLaunchCommand();
+    String getLaunchPath();
+    String getLaunchParameters();
+    String getSdkVersion();
     int getApplicationErrorCount();
     int getActiveSessions();
     int getAvailableSessions();

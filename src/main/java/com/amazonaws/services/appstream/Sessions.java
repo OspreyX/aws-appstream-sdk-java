@@ -30,7 +30,7 @@ public interface Sessions extends ResourceInfo {
     //-------------------------------------------------------------
 
     @Link(relation = "session:by-id")
-    Session getById(@UriVariable(name = "session-id") String sessionId);
+    Session getById(@UriVariable(name = "session_id") String sessionId);
 
     @Link(relation = "item")
     List<Session> getItems();
