@@ -31,7 +31,6 @@ public class AmazonAppStream {
 
     private static final String DEFAULT_ENDPOINT = "appstream.us-east-1.amazonaws.com";
     private static final String SERVICE_NAME = "appstream";
-    private static final String REGION_ID = "us-east-1";
 
 
     //-------------------------------------------------------------
@@ -51,8 +50,7 @@ public class AmazonAppStream {
 
 
     public AmazonAppStream(String endpoint) {
-        this.appStreamService = new HalService<>(endpoint == null ? DEFAULT_ENDPOINT : endpoint,
-                                                 SERVICE_NAME, REGION_ID, AppStream.class);
+        this.appStreamService = new HalService<>(endpoint == null ? DEFAULT_ENDPOINT : endpoint, SERVICE_NAME, AppStream.class);
     }
 
 

@@ -39,6 +39,8 @@ public interface ApplicationError extends ResourceInfo {
     String getId();
     String getState();
     String getType();
-    String getMessage();
     Date getErrorDate();
+    String getErrorCode();
+    String getCause();
+    String getSolution();
 }

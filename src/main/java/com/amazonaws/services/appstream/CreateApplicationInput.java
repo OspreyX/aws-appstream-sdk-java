@@ -16,6 +16,9 @@
 package com.amazonaws.services.appstream;
 
 
+import java.util.List;
+
+
 public class CreateApplicationInput {
 
     //-------------------------------------------------------------
@@ -28,6 +31,8 @@ public class CreateApplicationInput {
     private String installerParameters;
     private String launchPath;
     private String launchParameters;
+    private String logBucket;
+    private List<String> logPaths;
 
 
     //-------------------------------------------------------------
@@ -39,14 +44,17 @@ public class CreateApplicationInput {
 
 
     public CreateApplicationInput(String name, String description, String installerUrl,
-                                  String installerParameters, String launchPath, String launchParameters) {
-        this.name = name;
-        this.description = description;
-        this.installerUrl = installerUrl;
-        this.installerParameters = installerParameters;
-        this.launchPath = launchPath;
-        this.launchParameters = launchParameters;
-    }
+                                  String installerParameters, String launchPath, String launchParameters,
+                                  String logBucket, List<String> logPaths) {
+         this.name = name;
+         this.description = description;
+         this.installerUrl = installerUrl;
+         this.installerParameters = installerParameters;
+         this.launchPath = launchPath;
+         this.launchParameters = launchParameters;
+         this.logBucket = logBucket;
+         this.logPaths = logPaths;
+     }
 
 
     //-------------------------------------------------------------
@@ -110,5 +118,25 @@ public class CreateApplicationInput {
 
     public void setLaunchParameters(String launchParameters) {
         this.launchParameters = launchParameters;
+    }
+
+
+    public String getLogBucket() {
+        return logBucket;
+    }
+
+
+    public void setLogBucket(String logBucket) {
+        this.logBucket = logBucket;
+    }
+
+
+    public List<String> getLogPaths() {
+        return logPaths;
+    }
+
+
+    public void setLogPaths(List<String> logPaths) {
+        this.logPaths = logPaths;
     }
 }

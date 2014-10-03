@@ -20,5 +20,6 @@ public enum BuildStep {
     Copying,
     Preparing,
     Installing,
+    Creating,
     Provisioning
 }

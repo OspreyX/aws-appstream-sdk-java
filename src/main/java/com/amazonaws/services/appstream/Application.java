@@ -22,6 +22,7 @@ import com.amazonaws.hal.UriVariable;
 import com.amazonaws.http.HttpMethodName;
 
 import java.util.Date;
+import java.util.List;
 
 
 public interface Application extends ResourceInfo {
@@ -79,4 +80,6 @@ public interface Application extends ResourceInfo {
     int getSessionErrorCount();
     Date getCreatedDate();
     Date getLastUpdatedDate();
+    String getLogBucket();
+    List<String> getLogPaths();
 }

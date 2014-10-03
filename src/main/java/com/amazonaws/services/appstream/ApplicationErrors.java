@@ -32,8 +32,8 @@ public interface ApplicationErrors extends ResourceInfo {
     List<ApplicationError> getItems();
 
     @Link(relation = "next")
-    Applications getNext();
+    ApplicationErrors getNext();
 
     @Link(relation = "first")
-    Applications getFirst();
+    ApplicationErrors getFirst();
 }
