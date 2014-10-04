@@ -20,7 +20,7 @@
     <name>Appstream Java SDK</name>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-appstream-sdk-java</artifactId>
-    <version>1.2</version>
+    <version>1.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>
@@ -156,7 +156,7 @@
         <url>scm:git:git@github.com:awslabs/aws-appstream-sdk-java.git</url>
         <connection>scm:git:git@github.com:awslabs/aws-appstream-sdk-java.git</connection>
         <developerConnection>scm:git:git@github.com:awslabs/aws-appstream-sdk-java.git</developerConnection>
-      <tag>aws-appstream-sdk-java-1.2</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
