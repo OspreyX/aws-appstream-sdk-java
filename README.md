@@ -8,11 +8,11 @@ To start using the SDK in your code using Maven, please insert the following dep
     <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-appstream-sdk-java</artifactId>
-        <version>1.1.0</version>
+        <version>1.2</version>
     </dependency>
 
 To learn more about AppStream, please see the [service documentation][service-docs] or the [API documentation][api-docs].
 
-[appstream]: http://aws.amazon.com/appstream/
-[service-docs]: http://docs.aws.amazon.com/appstream/latest/developerguide/appstream-intro.html
-[api-docs]: http://docs.aws.amazon.com/appstream/latest/developerguide/rest-api.html
+[appstream]: http://aws.amazon.com/appstream/?ref=github_aws-appstream-sdk-java
+[service-docs]: http://docs.aws.amazon.com/appstream/latest/developerguide/appstream-intro.html?ref=github_aws-appstream-sdk-java
+[api-docs]: http://docs.aws.amazon.com/appstream/latest/developerguide/rest-api.html?ref=github_aws-appstream-sdk-java
