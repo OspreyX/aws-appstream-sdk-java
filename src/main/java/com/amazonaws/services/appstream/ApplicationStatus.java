@@ -36,4 +36,6 @@ public interface ApplicationStatus extends ResourceInfo {
 
     ApplicationState getState();
     BuildStep getBuildStep();
+    String getSetupUrl();
+    String getSetupEntitlement();
 }

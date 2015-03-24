@@ -15,9 +15,7 @@
 
 package com.amazonaws.services.appstream;
 
-
 import java.util.List;
-
 
 public class UpdateApplicationInput {
 
@@ -41,8 +39,8 @@ public class UpdateApplicationInput {
     }
 
 
-    public UpdateApplicationInput(String name, String description, String launchPath, String launchParameters,
-                                  String logBucket, List<String> logPaths) {
+    public UpdateApplicationInput(String name, String description, String launchPath,
+            String launchParameters, String logBucket, List<String> logPaths) {
         this.name = name;
         this.description = description;
         this.launchPath = launchPath;
@@ -100,7 +98,6 @@ public class UpdateApplicationInput {
         return logBucket;
     }
     
-
     public void setLogBucket(String logBucket) {
         this.logBucket = logBucket;
     }

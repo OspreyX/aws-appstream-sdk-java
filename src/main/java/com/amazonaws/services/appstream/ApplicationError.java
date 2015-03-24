@@ -16,10 +16,10 @@
 package com.amazonaws.services.appstream;
 
 
+import java.util.Date;
+
 import com.amazonaws.hal.Link;
 import com.amazonaws.hal.ResourceInfo;
-
-import java.util.Date;
 
 
 public interface ApplicationError extends ResourceInfo {
@@ -37,10 +37,22 @@ public interface ApplicationError extends ResourceInfo {
     //-------------------------------------------------------------
 
     String getId();
+
+
     String getState();
+
+
     String getType();
+
+
     Date getErrorDate();
+
+
     String getErrorCode();
+
+
     String getCause();
+
+
     String getSolution();
 }

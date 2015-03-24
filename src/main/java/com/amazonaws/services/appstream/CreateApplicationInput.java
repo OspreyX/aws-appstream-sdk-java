@@ -15,7 +15,6 @@
 
 package com.amazonaws.services.appstream;
 
-
 import java.util.List;
 
 
@@ -43,9 +42,8 @@ public class CreateApplicationInput {
     }
 
 
-    public CreateApplicationInput(String name, String description, String installerUrl,
-                                  String installerParameters, String launchPath, String launchParameters,
-                                  String logBucket, List<String> logPaths) {
+    public CreateApplicationInput(String name, String description, String installerUrl, String installerParameters, 
+            String launchPath, String launchParameters, String logBucket, List<String> logPaths) {
          this.name = name;
          this.description = description;
          this.installerUrl = installerUrl;

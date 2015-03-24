@@ -16,11 +16,13 @@
 package com.amazonaws.services.appstream;
 
 
+import java.net.URI;
+import java.util.Map;
+
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.hal.HalService;
-
-import java.util.Map;
+import com.amazonaws.util.AwsHostNameUtils;
 
 
 public class AmazonAppStream {
@@ -31,6 +33,7 @@ public class AmazonAppStream {
 
     private static final String DEFAULT_ENDPOINT = "appstream.us-east-1.amazonaws.com";
     private static final String SERVICE_NAME = "appstream";
+    private static final String DEFAULT_REGION_ID = "us-east-1";    
 
 
     //-------------------------------------------------------------
@@ -50,7 +53,14 @@ public class AmazonAppStream {
 
 
     public AmazonAppStream(String endpoint) {
-        this.appStreamService = new HalService<>(endpoint == null ? DEFAULT_ENDPOINT : endpoint, SERVICE_NAME, AppStream.class);
+        this(endpoint, getRegion(endpoint));
+    }
+    
+    public AmazonAppStream(String endpoint, String region){
+        if (endpoint == null || region == null) {    
+            throw new IllegalArgumentException("Endpoint and region cannot be null. Endpoint: " + endpoint + " Region: " + region);
+        }
+        this.appStreamService = new HalService<>(endpoint, SERVICE_NAME, region, AppStream.class);
     }
 
 
@@ -85,5 +95,22 @@ public class AmazonAppStream {
 
     public AppStream getAppStream() {
         return appStreamService.getRootResource();
+    }
+    
+
+    //-------------------------------------------------------------
+    // Methods - Get region from endpoint
+    //-------------------------------------------------------------
+    
+    private static String getRegion(final String endpoint) {
+        if (endpoint == null){
+            return DEFAULT_REGION_ID;
+        }
+        
+        if (endpoint.toLowerCase().contains("http")) {
+            return AwsHostNameUtils.parseRegionName(URI.create(endpoint).getHost(), null);
+        } else {
+            return AwsHostNameUtils.parseRegionName(endpoint, null);
+        }
     }
 }

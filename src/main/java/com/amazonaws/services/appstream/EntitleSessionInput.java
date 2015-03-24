@@ -23,7 +23,7 @@ public class EntitleSessionInput {
     //-------------------------------------------------------------
 
     private String opaqueData;
-
+    private long expirationDuration = 1;
 
     //-------------------------------------------------------------
     // Constructors
@@ -36,7 +36,15 @@ public class EntitleSessionInput {
     public EntitleSessionInput(String opaqueData) {
         this.opaqueData = opaqueData;
     }
-
+    
+    public EntitleSessionInput(long expirationDuration) {
+        this.expirationDuration = expirationDuration;
+    }
+    
+    public EntitleSessionInput(String opaqueData, long expirationDuration) {
+        this.opaqueData = opaqueData;
+        this.expirationDuration = expirationDuration;
+    }
 
     //-------------------------------------------------------------
     // Methods - Getter/Setter
@@ -49,5 +57,15 @@ public class EntitleSessionInput {
 
     public void setOpaqueData(String opaqueData) {
         this.opaqueData = opaqueData;
+    }
+    
+    
+    public long getExpirationDuration() {
+        return expirationDuration;
+    }
+
+
+    public void setExpirationDuration(long expirationDuration) {
+        this.expirationDuration = expirationDuration;
     }
 }
